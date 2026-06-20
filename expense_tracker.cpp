@@ -55,7 +55,6 @@ struct Stack {
             top++;
             actions[top] = action;
         } else {
-            // Shift elements down if the stack is full
             for (int i = 0; i < MX_HIST - 1; i++) {
                 actions[i] = actions[i + 1];
             }
@@ -320,9 +319,7 @@ bool readDate(int &day, int &month, int &year) {
     }
 }
 
-// ==============================================================
-//                    LINKED LIST OPERATIONS
-// ==============================================================
+// LINKED LIST OPERATIONS
 
 void addExpense() {
     ExpenseNode *node = new ExpenseNode();
@@ -485,10 +482,7 @@ void getByCategory() {
     }
 }
 
-// ==============================================================
-//                  ARRAY: MONTHLY REPORT
-// ==============================================================
-
+// ARRAY: MONTHLY REPORT
 void generateMonthlyReport() {
     if (head == nullptr) { 
         cout << "No expenses to report.\n"; 
@@ -618,9 +612,7 @@ void checkBudget() {
     }
 }
 
-// ==============================================================
-//                      FREE ALL MEMORY
-// ==============================================================
+// FREE ALL MEMORY
 
 void freeAll() {
     ExpenseNode *cur = head;
@@ -632,9 +624,7 @@ void freeAll() {
     head = nullptr;
 }
 
-// ==============================================================
-//                            MAIN MENU
-// ==============================================================
+// MAIN MENU
 
 void printMenu() {
     cout << "\n========================================\n";
@@ -654,7 +644,6 @@ void printMenu() {
 }
 
 int main() {
-    // Switch cin to line-mode so readInt/readFloat/readString work correctly
     while (true) {
         printMenu();
 
